@@ -1,0 +1,21 @@
+en:
+  books:
+    title: Books
+    show: Show this book
+    new: New book
+    edit: Edit this book
+    back: Back to books
+    destroy: Destroy this book
+    editing_book: Editing book
+    new_book: New book
+    
+  activerecord:
+    models:
+      book: Book  #g
+
+    attributes:
+      book:
+        author: Author  #g
+        memo: Memo  #g
+        picture: Picture  #g
+        title: Title  #g
