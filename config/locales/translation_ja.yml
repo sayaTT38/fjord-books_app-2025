@@ -8,6 +8,9 @@ ja:
     destroy: この本を削除
     editing_book: 本を編集
     new_book: 本を追加
+    destroy_message: 本の削除が完了しました。
+    new_message: 本の追加に成功しました。
+    edit_message: 本の編集に成功しました。
 
   activerecord:
     models:

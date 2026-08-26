@@ -8,6 +8,9 @@ en:
     destroy: Destroy this book
     editing_book: Editing book
     new_book: New book
+    destroy_message: Book was successfully destroyed.
+    new_message: Book was successfully created.
+    edit_message: Book was successfully updated.
     
   activerecord:
     models:
