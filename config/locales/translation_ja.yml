@@ -1,0 +1,28 @@
+ja:
+  destroy_message: "%{item}の削除が完了しました。"
+  new_message: "%{item}の追加に成功しました。"
+  edit_message: "%{item}の編集に成功しました。"
+
+  items:
+    book: 本
+
+  books:
+    title: 本一覧
+    show: この本を見る
+    new: 新しい本を追加
+    edit: この本を編集
+    back: 本一覧に戻る
+    destroy: この本を削除
+    editing_book: 本を編集
+    new_book: 本を追加
+
+  activerecord:
+    models:
+      book: 本  #g
+
+    attributes:
+      book:
+        author: 著者  #g
+        memo: メモ  #g
+        picture: 写真  #g
+        title: タイトル  #g
