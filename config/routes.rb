@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get "users/show"
   get "users/index"
   root to: "books#index"
-  resources :tasks
   devise_for :users
   resources :books
   resources :users
