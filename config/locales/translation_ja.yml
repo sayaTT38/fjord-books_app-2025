@@ -14,3 +14,7 @@ ja:
         postal_code: 郵便番号
         address: 住所
         profile: プロフィール
+  application:
+    edit_profile: プロフィールを編集
+    logout: サインアウト
+    Logged_in_as: ログイン中：
