@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
+  before_action :authorize_report, only: %i[ edit update destroy ]
 
   # GET /reports or /reports.json
   def index
@@ -12,7 +13,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    @report = current_user.reports.build
   end
 
   # GET /reports/1/edit
@@ -21,7 +22,7 @@ class ReportsController < ApplicationController
 
   # POST /reports or /reports.json
   def create
-    @report = Report.new(report_params)
+    @report = current_user.reports.build(report_params)
 
     respond_to do |format|
       if @report.save
@@ -67,4 +68,10 @@ class ReportsController < ApplicationController
     def report_params
       params.expect(report: [ :title, :body ])
     end
+
+  def authorize_report
+    unless @report.user == current_user
+      redirect_to reports_path, alert: '権限がありません'
+    end
+  end
 end
