@@ -25,13 +25,13 @@ class CommentsController < ApplicationController
 
   private
     def set_parent
-    if params[:book_id]
-      @parent = Book.find(params[:book_id])
-    elsif params[:report_id]
-      @parent = Report.find(params[:report_id])
+      if params[:book_id]
+        @parent = Book.find(params[:book_id])
+      elsif params[:report_id]
+        @parent = Report.find(params[:report_id])
+      end
     end
 
-    end
     def comment_params
       params.expect(comment: [ :body ])
     end
