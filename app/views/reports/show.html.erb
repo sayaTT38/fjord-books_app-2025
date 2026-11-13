@@ -1,0 +1,14 @@
+<%= render @report %>
+
+<div>
+  <%= link_to "Edit this report", edit_report_path(@report) %> |
+  <%= link_to "Back to reports", reports_path %>
+
+  <%= button_to "Destroy this report", @report, method: :delete %>
+</div>
+<div>
+  <br>
+  <%= render partial: "comments", locals: { comments: @report.comments } %>
+  <br>
+  <%= render partial: "application/form", locals: { parent: @report } %>
+</div>

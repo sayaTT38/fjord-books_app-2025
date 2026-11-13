@@ -3,7 +3,12 @@
 <div class="show-item">
   <%= render @book %>
 </div>
-
+<div>
+  <br>
+  <%= render partial: "comments", locals: { comments: @book.comments } %>
+  <br>
+  <%= render partial: "application/form", locals: { parent: @book } %>
+</div>
 <nav class="page-nav">
   <%= link_to t('views.common.edit', name: Book.model_name.human.downcase), edit_book_path(@book) %> |
   <%= link_to t('views.common.back', name: i18n_pluralize(Book.model_name.human.downcase)), books_path %>

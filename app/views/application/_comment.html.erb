@@ -1,0 +1,21 @@
+<div id="<%= dom_id comment %>">
+
+  <p>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <strong>Posted by:</strong>
+    <%= comment.user.name.presence || comment.user.email %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= comment.created_at.to_fs(:datetime_jp) %>
+  </p>
+
+  <%= button_to 'Destroy this comment',
+    [ comment.commentable , comment ],
+    method: :delete %>
+</div>

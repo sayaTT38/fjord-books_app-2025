@@ -1,0 +1,21 @@
+<div id="<%= dom_id report %>">
+  <p>
+    <strong>Title:</strong>
+    <%= report.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= report.body %>
+  </p>
+
+  <p>
+    <strong>Posted by:</strong>
+    <%= report.user.name.presence || report.user.email %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= report.created_at.to_fs(:datetime_jp) %>
+  </p>
+</div>
