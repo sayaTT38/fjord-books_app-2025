@@ -6,3 +6,9 @@
 
   <%= button_to "Destroy this report", @report, method: :delete %>
 </div>
+<div>
+  <br>
+  <%= render partial: "comments", locals: { comments: @report.comments } %>
+  <br>
+  <%= render partial: "application/form", locals: { parent: @report } %>
+</div>
