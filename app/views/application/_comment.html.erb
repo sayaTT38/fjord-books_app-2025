@@ -1,21 +1,21 @@
 <div id="<%= dom_id comment %>">
 
   <p>
-    <strong>Body:</strong>
+    <strong><%= Comment.human_attribute_name(:body) + ':' %></strong>
     <%= comment.body %>
   </p>
 
   <p>
-    <strong>Posted by:</strong>
+    <strong><%= Comment.human_attribute_name(:posted_by) + ':' %></strong>
     <%= comment.user.name.presence || comment.user.email %>
   </p>
 
   <p>
-    <strong>Created at:</strong>
+    <strong><%= Comment.human_attribute_name(:created_at) + ':' %></strong>
     <%= comment.created_at.to_fs(:datetime_jp) %>
   </p>
 
-  <%= button_to 'Destroy this comment',
+  <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase),
     [ comment.commentable , comment ],
     method: :delete %>
 </div>
