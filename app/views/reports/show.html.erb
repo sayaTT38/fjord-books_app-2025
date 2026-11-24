@@ -8,5 +8,5 @@
 </div>
 <div>
   <%= render "comments", comments: @report.comments.order(:id) %>
-  <%= render "application/form", parent: @report %>
+  <%= render "application/comment_form", parent: @report %>
 </div>
