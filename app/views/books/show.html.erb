@@ -4,9 +4,7 @@
   <%= render @book %>
 </div>
 <div>
-  <br>
   <%= render "comments", comments: @book.comments.order(:id) %>
-  <br>
   <%= render "application/form", parent: @book %>
 </div>
 <nav class="page-nav">

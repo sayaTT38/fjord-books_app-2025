@@ -7,8 +7,6 @@
   <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
 </div>
 <div>
-  <br>
   <%= render "comments", comments: @report.comments.order(:id) %>
-  <br>
   <%= render "application/form", parent: @report %>
 </div>
