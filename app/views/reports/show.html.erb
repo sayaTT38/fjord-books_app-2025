@@ -8,7 +8,7 @@
 </div>
 <div>
   <br>
-  <%= render partial: "comments", locals: { comments: @report.comments } %>
+  <%= render "comments", comments: @report.comments.order(:id) %>
   <br>
-  <%= render partial: "application/form", locals: { parent: @report } %>
+  <%= render "application/form", parent: @report %>
 </div>
