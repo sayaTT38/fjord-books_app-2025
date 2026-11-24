@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "comments/create"
-  get "comments/destroy"
   resources :reports do
     resources :comments, only: [:create, :destroy]
   end
