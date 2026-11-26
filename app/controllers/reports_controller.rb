@@ -60,7 +60,7 @@ class ReportsController < ApplicationController
   end
 
   def authorize_report
-    return if @report.user == current_user
+    return if current_user.reports.exists?(@report.id)
 
     redirect_to reports_path, alert: '権限がありません'
   end
