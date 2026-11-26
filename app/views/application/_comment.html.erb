@@ -7,7 +7,7 @@
 
   <p>
     <strong><%= Comment.human_attribute_name(:posted_by) + ':' %></strong>
-    <%= comment.user.name.presence || comment.user.email %>
+    <%= comment.user.display_name %>
   </p>
 
   <p>
