@@ -4,7 +4,9 @@
   <%= link_to t('views.common.edit', name: Report.model_name.human.downcase),edit_report_path(@report) %>  |
   <%= link_to t('views.common.back', name: i18n_pluralize(Report.model_name.human.downcase)), reports_path %>
 
-  <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
+  <% if @report.user == current_user %>
+    <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
+  <% end %>
 </div>
 <div>
   <%= render "comments", comments: @report.comments.order(:id) %>
