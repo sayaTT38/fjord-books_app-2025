@@ -15,13 +15,9 @@ module Books
     end
 
     def destroy
-      destroy_comment = @book.comments.find(params[:id])
-      if destroy_comment.user == current_user
-        destroy_comment.destroy
-        redirect_to @book
-      else
-        redirect_to @book, alert: 'コメントを削除する権限がありません'
-      end
+      destroy_comment = current_user.comments.find(params[:id])
+      destroy_comment.destroy
+      redirect_to @book
     end
 
     private
