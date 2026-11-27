@@ -15,8 +15,8 @@ module Books
     end
 
     def destroy
-      destroy_comment = current_user.comments.find(params[:id])
-      destroy_comment.destroy
+      comment = current_user.comments.find(params[:id])
+      comment.destroy
       redirect_to @book
     end
 
