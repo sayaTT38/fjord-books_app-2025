@@ -1,17 +1,17 @@
 <div id="<%= dom_id comment %>">
 
   <p>
-    <strong><%= Comment.human_attribute_name(:body) + ':' %></strong>
+    <strong><%= Comment.human_attribute_name(:body) %>:</strong>
     <%= comment.body %>
   </p>
 
   <p>
-    <strong><%= Comment.human_attribute_name(:posted_by) + ':' %></strong>
+    <strong><%= Comment.human_attribute_name(:posted_by) %>:</strong>
     <%= comment.user.display_name %>
   </p>
 
   <p>
-    <strong><%= Comment.human_attribute_name(:created_at) + ':' %></strong>
+    <strong><%= Comment.human_attribute_name(:created_at) %>:</strong>
     <%= l comment.created_at, format: :long %>
   </p>
 
