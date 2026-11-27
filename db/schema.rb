@@ -52,7 +52,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_11_10_072933) do
     t.string "commentable_type", null: false
     t.integer "commentable_id", null: false
     t.integer "user_id", null: false
-    t.text "body"
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
