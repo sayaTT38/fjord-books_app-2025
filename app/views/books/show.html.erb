@@ -5,7 +5,7 @@
 </div>
 <div>
   <%= render "comments", comments: @book.comments.order(:id) %>
-  <%= render "application/comment_form", parent: @book %>
+  <%= render "comment_form", parent: @book %>
 </div>
 <nav class="page-nav">
   <%= link_to t('views.common.edit', name: Book.model_name.human.downcase), edit_book_path(@book) %> |

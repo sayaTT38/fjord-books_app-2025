@@ -10,5 +10,5 @@
 </div>
 <div>
   <%= render "comments", comments: @report.comments.order(:id) %>
-  <%= render "application/comment_form", parent: @report %>
+  <%= render "comment_form", parent: @report %>
 </div>
