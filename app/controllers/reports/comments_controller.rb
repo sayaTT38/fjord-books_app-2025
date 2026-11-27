@@ -2,7 +2,7 @@
 
 module Reports
   class CommentsController < ApplicationController
-    before_action :set_parent
+    before_action :set_report
     before_action :authenticate_user!
 
     def create
@@ -22,7 +22,7 @@ module Reports
 
     private
 
-    def set_parent
+    def set_report
       @report = Report.find(params[:report_id])
     end
 

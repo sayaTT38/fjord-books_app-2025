@@ -2,7 +2,7 @@
 
 module Books
   class CommentsController < ApplicationController
-    before_action :set_parent
+    before_action :set_book
     before_action :authenticate_user!
 
     def create
@@ -22,7 +22,7 @@ module Books
 
     private
 
-    def set_parent
+    def set_book
       @book = Book.find(params[:book_id])
     end
 
