@@ -10,8 +10,6 @@ module Books
       comment.user = current_user
       if comment.save
         redirect_to @book
-      else
-        redirect_to @book, alert: comment.errors.full_messages.to_sentence
       end
     end
 

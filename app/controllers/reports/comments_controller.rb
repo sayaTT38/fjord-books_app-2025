@@ -10,8 +10,6 @@ module Reports
       comment.user = current_user
       if comment.save
         redirect_to @report
-      else
-        redirect_to @report, alert: comment.errors.full_messages.to_sentence
       end
     end
 
