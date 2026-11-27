@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
-  before_action :authorize_report, only: %i[edit update destroy]
+  before_action :set_report, only: %i[show]
+  before_action :set_current_user_report, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(:id)
@@ -46,13 +46,11 @@ class ReportsController < ApplicationController
     @report = Report.find(params.expect(:id))
   end
 
-  def report_params
-    params.expect(report: %i[title body])
+  def set_current_user_report
+    @report = current_user.reports.find(params.expect(:id))
   end
 
-  def authorize_report
-    return if current_user.reports.exists?(@report.id)
-
-    redirect_to reports_path, alert: '権限がありません'
+  def report_params
+    params.expect(report: %i[title body])
   end
 end
