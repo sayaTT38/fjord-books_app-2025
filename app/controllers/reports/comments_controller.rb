@@ -6,7 +6,8 @@ module Reports
     before_action :authenticate_user!
 
     def create
-      comment = @report.comments.build(comment_params.merge(user: current_user))
+      comment = @report.comments.build(comment_params)
+      comment.user = current_user
       if comment.save
         redirect_to @report
       else

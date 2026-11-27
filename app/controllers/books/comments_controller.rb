@@ -6,7 +6,8 @@ module Books
     before_action :authenticate_user!
 
     def create
-      comment = @book.comments.build(comment_params.merge(user: current_user))
+      comment = @book.comments.build(comment_params)
+      comment.user = current_user
       if comment.save
         redirect_to @book
       else
