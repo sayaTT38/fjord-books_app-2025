@@ -8,9 +8,8 @@ module Books
     def create
       comment = @book.comments.build(comment_params)
       comment.user = current_user
-      if comment.save
-        redirect_to @book
-      end
+      comment.save!
+      redirect_to @book
     end
 
     def destroy

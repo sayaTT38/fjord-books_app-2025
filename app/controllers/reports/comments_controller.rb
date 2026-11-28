@@ -8,9 +8,8 @@ module Reports
     def create
       comment = @report.comments.build(comment_params)
       comment.user = current_user
-      if comment.save
-        redirect_to @report
-      end
+      comment.save!
+      redirect_to @report
     end
 
     def destroy
