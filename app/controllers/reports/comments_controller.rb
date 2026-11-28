@@ -3,7 +3,6 @@
 module Reports
   class CommentsController < ApplicationController
     before_action :set_report
-    before_action :authenticate_user!
 
     def create
       comment = @report.comments.build(comment_params)

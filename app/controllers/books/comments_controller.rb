@@ -3,7 +3,6 @@
 module Books
   class CommentsController < ApplicationController
     before_action :set_book
-    before_action :authenticate_user!
 
     def create
       comment = @book.comments.build(comment_params)
